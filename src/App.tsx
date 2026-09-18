@@ -125,7 +125,7 @@ export default function App() {
       <header className="app-header">
         <h1>JSON 三方合并台</h1>
         <div className="steps">
-          <span className={`step ${stage === 'input' ? 'active' : 'done'}`}>1 输入三份 JSON</span>
+          <span className={`step ${stage === 'input' ? 'active' : 'done'}`}>1 输入文档 / 补丁</span>
           <span className={`step ${stage === 'merge' ? 'active' : stage === 'output' ? 'done' : ''}`}>
             2 解决冲突
           </span>

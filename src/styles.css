@@ -209,6 +209,65 @@ pre {
   margin-top: 10px;
 }
 
+/* 输入模式切换（三文档 / RFC 6902 补丁） */
+.input-mode-switch {
+  display: inline-flex;
+  gap: 4px;
+  margin-bottom: 12px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 4px;
+  align-self: flex-start;
+}
+
+.input-mode-switch button {
+  border: none;
+  background: transparent;
+  color: var(--text-dim);
+  padding: 6px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.input-mode-switch button.active {
+  background: var(--accent);
+  color: #fff;
+}
+
+.input-mode-switch button:not(.active):hover {
+  color: var(--text);
+  background: var(--bg-panel-2);
+}
+
+.patch-mode-hint {
+  font-size: 12.5px;
+  color: var(--text-dim);
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 6px;
+  padding: 8px 12px;
+  margin-bottom: 12px;
+  line-height: 1.7;
+}
+
+.patch-mode-hint code {
+  color: var(--teal);
+  font-size: 12px;
+}
+
+.patch-failure-banner {
+  margin-top: 10px;
+  padding: 8px 12px;
+  background: rgba(242, 85, 90, 0.12);
+  border: 1px solid var(--red);
+  border-radius: 6px;
+  line-height: 1.7;
+  font-size: 13px;
+}
+
 /* ---------- 合并阶段 ---------- */
 .merge-layout {
   display: grid;
