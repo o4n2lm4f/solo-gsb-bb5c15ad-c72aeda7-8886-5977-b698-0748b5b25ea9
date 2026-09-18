@@ -6,10 +6,12 @@ interface Props {
   value: string;
   error: string | null;
   onChange: (v: string) => void;
+  /** 错误文案前缀，默认「JSON 解析失败：」；传空串则原样展示 error */
+  errorPrefix?: string;
 }
 
 /** 单个 JSON 输入面板：支持粘贴与文件导入 */
-export default function JsonInputPanel({ title, hint, value, error, onChange }: Props) {
+export default function JsonInputPanel({ title, hint, value, error, onChange, errorPrefix }: Props) {
   const fileRef = useRef<HTMLInputElement>(null);
 
   const handleFile = async (file: File | undefined) => {
@@ -35,7 +37,7 @@ export default function JsonInputPanel({ title, hint, value, error, onChange }: 
         onChange={(e) => onChange(e.target.value)}
         spellCheck={false}
       />
-      {error && <div className="error-text">JSON 解析失败：{error}</div>}
+      {error && <div className="error-text">{errorPrefix ?? 'JSON 解析失败：'}{error}</div>}
       <div className="panel-actions">
         <button className="small" onClick={() => fileRef.current?.click()}>
           导入文件
